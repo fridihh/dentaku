@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const input = document.querySelector(".input");
     const buttons = document.querySelectorAll(".button button");
+    const haikei = document.querySelector("container");
 
     buttons.forEach(button => {
         button.addEventListener("click", function () {
@@ -39,4 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
             adjustInputSize(); // サイズ調整
         }
     });
+
+    
+        // カラーピッカー要素を取得します
+        const colorInput = document.getElementById('haikei');
+        
+        // 背景色を変更する対象の要素を取得します
+        const container = document.querySelector('.container');
+        
+        // カラーピッカーの値が変更されたときに背景色を変更するイベントリスナーを追加します
+        colorInput.addEventListener('input', (event) => {
+            container.style.backgroundColor = event.target.value;
+        });
 });
